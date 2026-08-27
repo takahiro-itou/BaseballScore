@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include    "Sample/Common/SampleDocument.h"
+#include    "Score4Core/Common/Score4Types.h"
 
 using namespace System;
 
@@ -116,9 +116,6 @@ public:
 //
 private:
 
-    typedef     Sample::Common::SampleDocument  WrapTarget;
-
-    WrapTarget  *   m_ptrObj;
 };
 
 }   //  End of namespace  Common
