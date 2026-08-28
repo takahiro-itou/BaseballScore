@@ -83,20 +83,23 @@
   </ItemDefinitionGroup>
 
   <ItemGroup>
+    <ClInclude Include="..\Wrapper\DocumentFile.h" />
     <ClInclude Include="..\Wrapper\resource.h" />
+    <ClInclude Include="..\Wrapper\Score4Wrapper.h" />
+    <ClInclude Include="..\Wrapper\ScoreDocument.h" />
+    <ClInclude Include="..\Wrapper\ScoreInterface.h" />
     <ClInclude Include="..\Wrapper\Stdafx.h" />
-    <ClInclude Include="..\Wrapper\Wrapper.h" />
   </ItemGroup>
 
   <ItemGroup>
     <ClCompile Include="..\Wrapper\AssemblyInfo.cpp" />
+    <ClCompile Include="..\Wrapper\DocumentFile.cpp" />
+    <ClCompile Include="..\Wrapper\Score4Wrapper.cpp" />
+    <ClCompile Include="..\Wrapper\ScoreDocument.cpp" />
+    <ClCompile Include="..\Wrapper\ScoreInterface.cpp" />
     <ClCompile Include="..\Wrapper\Stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="..\Wrapper\Wrapper.cpp" />
   </ItemGroup>
 
   <ItemGroup>
