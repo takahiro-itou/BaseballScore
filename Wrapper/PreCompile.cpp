@@ -1,7 +1,7 @@
 ﻿//  -*-  coding: utf-8-with-signature;  mode: c++  -*-  //
 /*************************************************************************
 **                                                                      **
-**                  ---  Baseball  Score  Project  ---                  **
+**                  ---  Baseball  Score  Wrapper  ---                  **
 **                                                                      **
 **          Copyright (C), 2017-2026, Takahiro Itou                     **
 **          All Rights Reserved.                                        **
