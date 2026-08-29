@@ -5,7 +5,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <OutputType>WinExe</OutputType>
     <Platforms>x64;x86</Platforms>
-    <RootNamespace>ViewVb</RootNamespace>
+    <RootNamespace>BaseballScoreView</RootNamespace>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="MainWindow.xaml.vb" />
-    <Compile Include="MySampleModel.vb" />
+    <Compile Include="Models\MySampleModel.vb" />
+    <Compile Include="Views\MainWindow.xaml.vb" />
   </ItemGroup>
 
 </Project>
