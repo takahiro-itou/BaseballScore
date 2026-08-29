@@ -7,41 +7,44 @@
     xmlns:local="clr-namespace:BaseballScoreView"
     Title="Main Window"
     Height="672" Width="840"
+    MinHeight="672" MinWidth="840"
 >
   <DockPanel>
     <!--  メインメニュー  -->
     <Menu  DockPanel.Dock="Top">
       <MenuItem  Header="ファイル(_F)">
-        <MenuItem  Header="新規作成(_N)" />
+        <MenuItem  Header="新規作成(_N)"  x:Name="mnuFileNew" />
         <MenuItem  Header="開く(_O) ..."  Click="mnuFileOpen_Click" />
         <Separator />
-        <MenuItem  Header="上書き保存(_S)" />
-        <MenuItem  Header="名前を付けて保存(_A) ..." />
+        <MenuItem  Header="上書き保存(_S)"  x:Name="mnuFileSave" />
+        <MenuItem  Header="名前を付けて保存(_A) ..."  x:Name="mnuFileSaveAs" />
         <Separator />
-        <MenuItem  Header="テキストを開く(_T) ..." />
-        <MenuItem  Header="テキストとしてエクスポート(_E) ..." />
+        <MenuItem  Header="テキストを開く(_T) ..."  x:Name="mnuFileOpenText" />
+        <MenuItem  Header="テキストとしてエクスポート(_E) ..."
+            x:Name="mnuFileExportText" />
         <Separator />
-        <MenuItem  Header="終了(_X)" />
+        <MenuItem  Header="終了(_X)"  x:Name="mnuFileExit" />
       </MenuItem>
       <MenuItem  Header="スコア(_S)">
-        <MenuItem  Header="編集(_E) ..." />
-        <MenuItem  Header="詳細(_D) ..." />
-        <MenuItem  Header="インポート(_I) ..." />
+        <MenuItem  Header="編集(_E) ..."  x:Name="mnuScoreEdit" />
+        <MenuItem  Header="詳細(_D) ..."  x:Name="mnuScoreDetail" />
+        <MenuItem  Header="インポート(_I) ..."  x:Name="mnuScoreImport" />
         <Separator />
-        <MenuItem  Header="設定の変更(_S) ..." />
+        <MenuItem  Header="設定の変更(_S) ..."  x:Name="mnuScoreSettings" />
         <Separator />
-        <MenuItem  Header="最新の情報に更新(_R) ..." />
+        <MenuItem  Header="最新の情報に更新(_R) ..."
+            x:Name="mnuScoreRefresh" />
       </MenuItem>
       <MenuItem  Header="マジック(_M)">
-        <MenuItem  Header="優勝マジック(_V)" />
-        <MenuItem  Header="プレーオフマジック(_P)" />
+        <MenuItem  Header="優勝マジック(_V)"  x:Name="mnuMagicVictory" />
+        <MenuItem  Header="プレーオフマジック(_P)"  x:Name="mnuMagicPlayoff" />
         <Separator />
-        <MenuItem  Header="簡易計算で行う(_E)" />
+        <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
         <Separator />
         <MenuItem  Header="詳細表示(L) ..."  x:Name="mnuMagicLine" />
       </MenuItem>
       <MenuItem  Header="オプション(_O)">
-        <MenuItem  Header="フォント(F) ..." />
+        <MenuItem  Header="フォント(F) ..."  x:Name="mnuOptionsFont" />
       </MenuItem>
     </Menu>
 
@@ -77,7 +80,7 @@
             AutoGenerateColumns="True"
             CanUserAddRows="False"
             RowHeaderWidth="0"
-            Margin="8,8,8,0"
+            Margin="8,8,8,0" MinHeight="240" MinWidth="552"
         />
         <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
       </Grid>

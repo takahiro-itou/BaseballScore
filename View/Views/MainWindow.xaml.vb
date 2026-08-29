@@ -48,17 +48,35 @@ End Sub
 Private Sub mnuMagicLine_Click(sender As Object, e As EventArgs) Handles _
             mnuMagicLine.Click
 ''--------------------------------------------------------------------
-''    メニュー「ファイル」－「開く」
+''    メニュー「マジック」－「詳細表示」
 ''--------------------------------------------------------------------
+Dim frmLine As LineView
 
-    Dim frmLine As LineView = New LineView()
-
+    frmLine = New LineView()
     With frmLine
         ' .initializeFormPosition(Me.m_iniFileName, Me)
         ' .initializeView(Me.m_scoreData, Me.m_currentDate)
         .ShowDialog()
+    End With
 
-        ' .Dispose()
+End Sub
+
+
+Private Sub mnuScoreEdit_Click(sender As Object, e As EventArgs) Handles _
+            mnuScoreEdit.Click
+''--------------------------------------------------------------------
+''    メニュー「スコア」－「編集」
+''--------------------------------------------------------------------
+Dim frmEdit As EditForm
+
+    frmEdit = New EditForm()
+    With frmEdit
+        ' .initializeFormPosition(Me.m_iniFileName, Me)
+        ' .setupSettings(m_scoreData, m_currentDate)
+        If .ShowDialog() Then
+            ' 変更内容を受け取る
+'            .applyEditData(m_scoreData)
+        End If
     End With
 
 End Sub
