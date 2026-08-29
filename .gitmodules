@@ -3,4 +3,4 @@
 	url  = ../BaseballScoreLib.git
 [submodule "WpfControl"]
 	path = WpfControl
-	url  = ../../takahiro-itou/WpfControlLibrary.git
+	url  = ../../takahiro-itou/BaseballScoreWpfHelper.git
