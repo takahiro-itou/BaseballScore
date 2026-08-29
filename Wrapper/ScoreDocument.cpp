@@ -18,7 +18,7 @@
 **      @file       ScoreDocument.cpp
 **/
 
-#include    "StdAfx.h"
+#include    "PreCompile.h"
 
 #include    "ScoreDocument.h"
 
