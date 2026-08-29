@@ -13,15 +13,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControl", "WpfControl\WpfControl.NetOld.csproj", "{1C4736DE-C7DE-1784-8A00-BDB97629D0AA}"
 EndProject
 
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ViewVb", "ViewVb\ViewVb.NetOld.vbproj", "{CAB3CC38-2B52-42E5-825B-7E3B71094905}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "View", "View\View.NetOld.vbproj", "{CAB3CC38-2B52-42E5-825B-7E3B71094905}"
 EndProject
 
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
-        Debug|Any CPU = Debug|Any CPU
         Debug|x64 = Debug|x64
         Debug|x86 = Debug|x86
-        Release|Any CPU = Release|Any CPU
         Release|x64 = Release|x64
         Release|x86 = Release|x86
     EndGlobalSection
