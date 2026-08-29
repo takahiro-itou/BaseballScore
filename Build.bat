@@ -1,7 +1,7 @@
 
 set  solution=SampleView
 set  target=Build
-set  config="Debug"
+set  config="Release"
 
 
 msbuild  -restore  -t:%target%  ^
