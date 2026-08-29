@@ -18,15 +18,9 @@ Private Sub runCount(ByVal message As String)
 ''
 ''    入力テキスト中のアルファベットの個数を数える
 ''--------------------------------------------------------------------
-Dim result As Integer
 Dim outText As String
-Dim objWrapper As SampleWrapper.Common.SampleDocument
 
-    objWrapper = New SampleWrapper.Common.SampleDocument()
-    objWrapper.setMessage(message)
-    result = objWrapper.countAlphabet()
-
-    outText = "入力した文字列中のアルファベットの個数は " & result
+    outText = $"Not Implemented {message}"
     Me.setOutputText(outText)
     MsgBox(outText, MsgBoxStyle.OkOnly)
 End Sub
