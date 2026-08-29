@@ -9,49 +9,53 @@
     Height="672" Width="840"
 >
   <DockPanel>
-    <Menu DockPanel.Dock="Top">
-      <MenuItem Header="ファイル(_F)">
-        <MenuItem Header="新規作成(_N)" />
-        <MenuItem Header="開く(_O) ..." />
+    <!--  メインメニュー  -->
+    <Menu  DockPanel.Dock="Top">
+      <MenuItem  Header="ファイル(_F)">
+        <MenuItem  Header="新規作成(_N)" />
+        <MenuItem  Header="開く(_O) ..."  Click="mnuFileOpen_Click" />
         <Separator />
-        <MenuItem Header="上書き保存(_S)" />
-        <MenuItem Header="名前を付けて保存(_A) ..." />
+        <MenuItem  Header="上書き保存(_S)" />
+        <MenuItem  Header="名前を付けて保存(_A) ..." />
         <Separator />
-        <MenuItem Header="テキストを開く(_T) ..." />
-        <MenuItem Header="テキストとしてエクスポート(_E) ..." />
+        <MenuItem  Header="テキストを開く(_T) ..." />
+        <MenuItem  Header="テキストとしてエクスポート(_E) ..." />
         <Separator />
-        <MenuItem Header="終了(_X)" />
+        <MenuItem  Header="終了(_X)" />
       </MenuItem>
-      <MenuItem Header="スコア(_S)">
-        <MenuItem Header="編集(_E) ..." />
-        <MenuItem Header="詳細(_D) ..." />
-        <MenuItem Header="インポート(_I) ..." />
+      <MenuItem  Header="スコア(_S)">
+        <MenuItem  Header="編集(_E) ..." />
+        <MenuItem  Header="詳細(_D) ..." />
+        <MenuItem  Header="インポート(_I) ..." />
         <Separator />
-        <MenuItem Header="設定の変更(_S) ..." />
+        <MenuItem  Header="設定の変更(_S) ..." />
         <Separator />
-        <MenuItem Header="最新の情報に更新(_R) ..." />
+        <MenuItem  Header="最新の情報に更新(_R) ..." />
       </MenuItem>
-      <MenuItem Header="マジック(_M)">
-        <MenuItem Header="優勝マジック(_V)" />
-        <MenuItem Header="プレーオフマジック(_P)" />
+      <MenuItem  Header="マジック(_M)">
+        <MenuItem  Header="優勝マジック(_V)" />
+        <MenuItem  Header="プレーオフマジック(_P)" />
         <Separator />
-        <MenuItem Header="簡易計算で行う(_E)" />
+        <MenuItem  Header="簡易計算で行う(_E)" />
         <Separator />
-        <MenuItem Header="詳細表示(L) ..." />
+        <MenuItem  Header="詳細表示(L) ..."  x:Name="mnuMagicLine" />
       </MenuItem>
-      <MenuItem Header="オプション(_O)">
-        <MenuItem Header="フォント(F) ..." />
+      <MenuItem  Header="オプション(_O)">
+        <MenuItem  Header="フォント(F) ..." />
       </MenuItem>
     </Menu>
 
     <Grid>
       <Grid.RowDefinitions>
         <RowDefinition  Height="Auto" />
+        <RowDefinition  Height="Auto" />
+        <RowDefinition  Height="Auto" />
         <RowDefinition  Height="*" />
       </Grid.RowDefinitions>
 
       <TabControl
           Grid.Row="0"
+          Margin="8,8,8,8"
       >
         <TabControl.ItemTemplate>
           <DataTemplate>
@@ -60,12 +64,49 @@
         </TabControl.ItemTemplate>
       </TabControl>
 
-      <DataGrid
+      <Grid
           Grid.Row="1"
+          Margin="8,0,8,8"
+      >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition  Width="*" />
+          <ColumnDefinition  Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <DataGrid
+            Grid.Column="0"
+            AutoGenerateColumns="True"
+            CanUserAddRows="False"
+            RowHeaderWidth="0"
+            Margin="8,8,8,0"
+        />
+        <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
+      </Grid>
+
+      <StackPanel
+          Grid.Row="2"
+          Orientation="Horizontal"
+          Margin="8,0,8,0"
+      >
+        <CheckBox  Content="日程上の「予定」も集計する(_S)"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="残り試合数(_R)"  IsChecked="True"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="マジック(_M)"  IsChecked="False"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="必要勝利数(_W)"  IsChecked="False"
+            Margin="8,8,8,8" />
+      </StackPanel>
+
+      <DataGrid
+          Grid.Row="3"
           AutoGenerateColumns="True"
           CanUserAddRows="False"
           RowHeaderWidth="0"
-      />
+          Margin="8,8,8,8"
+       />
     </Grid>
   </DockPanel>
 

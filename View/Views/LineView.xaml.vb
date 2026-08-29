@@ -15,52 +15,13 @@
 
 Namespace Global.BaseballScoreView.Views
 
-Public Class MainWindow
+Public Class LineView
 
 Public Sub New()
 ''--------------------------------------------------------------------
 ''    コンストラクタ
 ''--------------------------------------------------------------------
     InitializeComponent()
-End Sub
-
-
-Private Sub mnuFileOpen_Click(sender As Object, e As EventArgs)
-''--------------------------------------------------------------------
-''    メニュー「ファイル」－「開く」
-''--------------------------------------------------------------------
-Dim dlgOpenFile As New Microsoft.Win32.OpenFileDialog
-
-    With dlgOpenFile
-        .DefaultExt = ".nes"
-        .FileName = "*.nes"
-        .Filter = "Nes Image(*.nes)|*.nes|All files(*.*)|*.*"
-        .FilterIndex = 1
-
-        If .ShowDialog() = True Then
-
-        End If
-    End With
-
-End Sub
-
-
-Private Sub mnuMagicLine_Click(sender As Object, e As EventArgs) Handles _
-            mnuMagicLine.Click
-''--------------------------------------------------------------------
-''    メニュー「ファイル」－「開く」
-''--------------------------------------------------------------------
-
-    Dim frmLine As LineView = New LineView()
-
-    With frmLine
-        ' .initializeFormPosition(Me.m_iniFileName, Me)
-        ' .initializeView(Me.m_scoreData, Me.m_currentDate)
-        .ShowDialog()
-
-        ' .Dispose()
-    End With
-
 End Sub
 
 
