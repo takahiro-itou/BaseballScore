@@ -97,6 +97,8 @@
             CanUserAddRows="False"
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
+            IsReadOnly="True"
+            ItemsSource="{Binding RankingSource}"
         />
         <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
       </Grid>
@@ -125,6 +127,8 @@
           CanUserAddRows="False"
           RowHeaderWidth="0"
           Margin="8,8,8,8"
+          IsReadOnly="True"
+          ItemsSource="{Binding ExtraSource}"
        />
     </Grid>
   </DockPanel>
