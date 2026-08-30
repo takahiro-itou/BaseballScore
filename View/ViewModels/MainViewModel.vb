@@ -22,7 +22,7 @@ End Class
 
 Public Class MainViewModel
 
-Public Leagues As List(Of LeagueInfo)
+Public Property Leagues As List(Of LeagueInfo)
 
 Public Sub New()
 ''--------------------------------------------------------------------

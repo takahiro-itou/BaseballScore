@@ -7,7 +7,6 @@
     xmlns:local="clr-namespace:BaseballScoreView"
     xmlns:vm="clr-namespace:BaseballScoreView.ViewModels"
     mc:Ignorable="d"
-    d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
     Title="Main Window"
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
