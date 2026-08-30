@@ -17,13 +17,12 @@ Imports WpfControl.Sample
 Namespace Global.BaseballScoreView.Models
 
 Public Class MySampleModel
-        Inherits WpfControl.Sample.AbstractSampleModel
 
-Public Overrides Sub executeCommand()
+Public Sub executeCommand()
 ''--------------------------------------------------------------------
 ''    適当な動作を実行する
 ''--------------------------------------------------------------------
-    RunCount(Me.InputText)
+
 End Sub
 
 
@@ -36,7 +35,6 @@ Private Sub runCount(ByVal message As String)
 Dim outText As String
 
     outText = $"Not Implemented {message}"
-    Me.setOutputText(outText)
     MsgBox(outText, MsgBoxStyle.OkOnly)
 End Sub
 
