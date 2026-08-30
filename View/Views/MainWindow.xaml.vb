@@ -15,13 +15,26 @@
 
 Namespace Global.BaseballScoreView.Views
 
+Public Class LeagueInfo
+    Public Property LeagueName As String
+End Class
+
+
 Public Class MainWindow
+
+Public Leagues As List(Of LeagueInfo)
 
 Public Sub New()
 ''--------------------------------------------------------------------
 ''    コンストラクタ
 ''--------------------------------------------------------------------
     InitializeComponent()
+
+    ' ダミーデータを作る
+    Me.Leagues = New List(Of LeagueInfo) From {
+        New LeagueInfo With { .LeagueName = "League 1" },
+        New LeagueInfo With { .LeagueName = "League 2" }
+    }
 End Sub
 
 
