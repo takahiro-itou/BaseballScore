@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
-    xmlns:vm="clr-namespace:BaseballScoreView.ViewModels"
+    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfControl"
     mc:Ignorable="d"
-    Title="Main Window"
+    Title="{Binding WindowCaption}"
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
 >
@@ -20,10 +20,13 @@
     <Menu  DockPanel.Dock="Top">
       <MenuItem  Header="ファイル(_F)">
         <MenuItem  Header="新規作成(_N)"  x:Name="mnuFileNew" />
-        <MenuItem  Header="開く(_O) ..."  Click="mnuFileOpen_Click" />
+        <MenuItem  Header="開く(_O) ..."
+            Command="{Binding FileOpenCommand}" />
         <Separator />
-        <MenuItem  Header="上書き保存(_S)"  x:Name="mnuFileSave" />
-        <MenuItem  Header="名前を付けて保存(_A) ..."  x:Name="mnuFileSaveAs" />
+        <MenuItem  Header="上書き保存(_S)"
+            Command="{Binding FileSaveCommand}" />
+        <MenuItem  Header="名前を付けて保存(_A) ..."
+            Command="{Binding FileSaveAsCommand}" />
         <Separator />
         <MenuItem  Header="テキストを開く(_T) ..."  x:Name="mnuFileOpenText" />
         <MenuItem  Header="テキストとしてエクスポート(_E) ..."
@@ -73,10 +76,11 @@
           </DataTemplate>
         </TabControl.ItemTemplate>
 
-        <TabControl.ContentTemplate>
-          <DataTemplate>
-          </DataTemplate>
-        </TabControl.ContentTemplate>
+        <TabControl.Template>
+          <ControlTemplate TargetType="TabControl">
+            <TabPanel  IsItemsHost="True" />
+          </ControlTemplate>
+        </TabControl.Template>
       </TabControl>
 
       <Grid
@@ -89,11 +93,33 @@
         </Grid.ColumnDefinitions>
         <DataGrid
             Grid.Column="0"
-            AutoGenerateColumns="True"
+            AutoGenerateColumns="False"
             CanUserAddRows="False"
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
-        />
+            IsReadOnly="True"
+            ItemsSource="{Binding RankingSource.RankingData}" >
+          <DataGrid.Columns>
+            <DataGridTextColumn  Header="Team"
+                Binding="{Binding TeamName}"  Width="*"/>
+            <DataGridTextColumn  Header="Total"
+                Binding="{Binding NumGames}"  Width="48"/>
+            <DataGridTextColumn  Header="Won"
+                Binding="{Binding NumWons}"  Width="48" />
+            <DataGridTextColumn  Header="Lost"
+                Binding="{Binding NumLost}"  Width="48" />
+            <DataGridTextColumn  Header="Draw"
+                Binding="{Binding NumDraw}"  Width="48" />
+            <DataGridTextColumn  Header="Diff"
+                Binding="{Binding GameDiff}"  Width="48" />
+            <DataGridTextColumn  Header="%"
+                Binding="{Binding Percent}"  Width="48" />
+            <DataGridTextColumn  Header="Magic"
+                Binding="{Binding MagicText}"  Width="48" />
+            <DataGridTextColumn  Header="Rank"
+                Binding="{Binding RankRange}"  Width="60" />
+          </DataGrid.Columns>
+        </DataGrid>
         <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
       </Grid>
 
@@ -121,6 +147,8 @@
           CanUserAddRows="False"
           RowHeaderWidth="0"
           Margin="8,8,8,8"
+          IsReadOnly="True"
+          ItemsSource="{Binding ExtraSource}"
        />
     </Grid>
   </DockPanel>
