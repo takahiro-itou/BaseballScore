@@ -12,7 +12,6 @@
 ''                                                                      ''
 ''************************************************************************
 
-Imports WpfControl.Sample
 
 Namespace Global.BaseballScoreView.Models
 
