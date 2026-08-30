@@ -5,10 +5,17 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
+    xmlns:vm="clr-namespace:BaseballScoreView.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
     Title="Main Window"
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
 >
+  <Window.DataContext>
+    <vm:MainViewModel />
+  </Window.DataContext>
+
   <DockPanel>
     <!--  メインメニュー  -->
     <Menu  DockPanel.Dock="Top">

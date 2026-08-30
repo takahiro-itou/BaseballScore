@@ -29,12 +29,6 @@ Public Sub New()
 ''    コンストラクタ
 ''--------------------------------------------------------------------
     InitializeComponent()
-
-    ' ダミーデータを作る
-    Me.Leagues = New List(Of LeagueInfo) From {
-        New LeagueInfo With { .LeagueName = "League 1" },
-        New LeagueInfo With { .LeagueName = "League 2" }
-    }
 End Sub
 
 
