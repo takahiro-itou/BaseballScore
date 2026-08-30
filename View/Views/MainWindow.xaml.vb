@@ -32,9 +32,9 @@ Private Sub mnuFileOpen_Click(sender As Object, e As EventArgs)
 Dim dlgOpenFile As New Microsoft.Win32.OpenFileDialog
 
     With dlgOpenFile
-        .DefaultExt = ".nes"
-        .FileName = "*.nes"
-        .Filter = "Nes Image(*.nes)|*.nes|All files(*.*)|*.*"
+        .DefaultExt = ".gsr"
+        .FileName = "*.gsr"
+        .Filter = "Game Score Record(*.gsr)|*.gsr|All files(*.*)|*.*"
         .FilterIndex = 1
 
         If .ShowDialog() = True Then
