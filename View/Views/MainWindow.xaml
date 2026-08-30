@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:BaseballScoreView"
     xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfControl"
     mc:Ignorable="d"
-    Title="Main Window"
+    Title="{Binding WindowCaption}"
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
 >
@@ -20,10 +20,13 @@
     <Menu  DockPanel.Dock="Top">
       <MenuItem  Header="ファイル(_F)">
         <MenuItem  Header="新規作成(_N)"  x:Name="mnuFileNew" />
-        <MenuItem  Header="開く(_O) ..."  Click="mnuFileOpen_Click" />
+        <MenuItem  Header="開く(_O) ..."
+            Command="{Binding FileOpenCommand}" />
         <Separator />
-        <MenuItem  Header="上書き保存(_S)"  x:Name="mnuFileSave" />
-        <MenuItem  Header="名前を付けて保存(_A) ..."  x:Name="mnuFileSaveAs" />
+        <MenuItem  Header="上書き保存(_S)"
+            Command="{Binding FileSaveCommand}" />
+        <MenuItem  Header="名前を付けて保存(_A) ..."
+            Command="{Binding FileSaveAsCommand}" />
         <Separator />
         <MenuItem  Header="テキストを開く(_T) ..."  x:Name="mnuFileOpenText" />
         <MenuItem  Header="テキストとしてエクスポート(_E) ..."
