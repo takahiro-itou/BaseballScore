@@ -5,7 +5,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <OutputType>WinExe</OutputType>
     <Platforms>x64;x86</Platforms>
-    <RootNamespace>ViewVb</RootNamespace>
+    <RootNamespace>BaseballScoreView</RootNamespace>
     <TargetFrameworks>
       net48;
     </TargetFrameworks>
@@ -25,8 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="MainWindow.xaml.vb" />
-    <Compile Include="MySampleModel.vb" />
+    <Compile Include="Models\MySampleModel.vb" />
+    <Compile Include="Views\EditForm.xaml.vb" />
+    <Compile Include="Views\LineView.xaml.vb" />
+    <Compile Include="Views\MainWindow.xaml.vb" />
   </ItemGroup>
 
   <ItemGroup>

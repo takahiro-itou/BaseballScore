@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:BaseballScoreView"
+    xmlns:vm="clr-namespace:BaseballScoreView.ViewModels"
+    mc:Ignorable="d"
+    Title="Main Window"
+    Height="672" Width="840"
+    MinHeight="672" MinWidth="840"
+>
+  <Window.DataContext>
+    <vm:MainViewModel />
+  </Window.DataContext>
+
+  <DockPanel>
+    <!--  メインメニュー  -->
+    <Menu  DockPanel.Dock="Top">
+      <MenuItem  Header="ファイル(_F)">
+        <MenuItem  Header="新規作成(_N)"  x:Name="mnuFileNew" />
+        <MenuItem  Header="開く(_O) ..."  Click="mnuFileOpen_Click" />
+        <Separator />
+        <MenuItem  Header="上書き保存(_S)"  x:Name="mnuFileSave" />
+        <MenuItem  Header="名前を付けて保存(_A) ..."  x:Name="mnuFileSaveAs" />
+        <Separator />
+        <MenuItem  Header="テキストを開く(_T) ..."  x:Name="mnuFileOpenText" />
+        <MenuItem  Header="テキストとしてエクスポート(_E) ..."
+            x:Name="mnuFileExportText" />
+        <Separator />
+        <MenuItem  Header="終了(_X)"  x:Name="mnuFileExit" />
+      </MenuItem>
+      <MenuItem  Header="スコア(_S)">
+        <MenuItem  Header="編集(_E) ..."  x:Name="mnuScoreEdit" />
+        <MenuItem  Header="詳細(_D) ..."  x:Name="mnuScoreDetail" />
+        <MenuItem  Header="インポート(_I) ..."  x:Name="mnuScoreImport" />
+        <Separator />
+        <MenuItem  Header="設定の変更(_S) ..."  x:Name="mnuScoreSettings" />
+        <Separator />
+        <MenuItem  Header="最新の情報に更新(_R) ..."
+            x:Name="mnuScoreRefresh" />
+      </MenuItem>
+      <MenuItem  Header="マジック(_M)">
+        <MenuItem  Header="優勝マジック(_V)"  x:Name="mnuMagicVictory" />
+        <MenuItem  Header="プレーオフマジック(_P)"  x:Name="mnuMagicPlayoff" />
+        <Separator />
+        <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
+        <Separator />
+        <MenuItem  Header="詳細表示(L) ..."  x:Name="mnuMagicLine" />
+      </MenuItem>
+      <MenuItem  Header="オプション(_O)">
+        <MenuItem  Header="フォント(F) ..."  x:Name="mnuOptionsFont" />
+      </MenuItem>
+    </Menu>
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition  Height="Auto" />
+        <RowDefinition  Height="Auto" />
+        <RowDefinition  Height="Auto" />
+        <RowDefinition  Height="*" />
+      </Grid.RowDefinitions>
+
+      <TabControl
+          Grid.Row="0"
+          Margin="8,8,8,8"
+          ItemsSource="{Binding Leagues}"
+      >
+        <TabControl.ItemTemplate>
+          <DataTemplate>
+            <TextBlock  Text="{Binding LeagueName}" />
+          </DataTemplate>
+        </TabControl.ItemTemplate>
+
+        <TabControl.ContentTemplate>
+          <DataTemplate>
+          </DataTemplate>
+        </TabControl.ContentTemplate>
+      </TabControl>
+
+      <Grid
+          Grid.Row="1"
+          Margin="8,0,8,8"
+      >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition  Width="*" />
+          <ColumnDefinition  Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <DataGrid
+            Grid.Column="0"
+            AutoGenerateColumns="True"
+            CanUserAddRows="False"
+            RowHeaderWidth="0"
+            Margin="8,8,8,0" MinHeight="240" MinWidth="552"
+        />
+        <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
+      </Grid>
+
+      <StackPanel
+          Grid.Row="2"
+          Orientation="Horizontal"
+          Margin="8,0,8,0"
+      >
+        <CheckBox  Content="日程上の「予定」も集計する(_S)"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="残り試合数(_R)"  IsChecked="True"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="マジック(_M)"  IsChecked="False"
+            Margin="8,8,8,8" />
+        <RadioButton  GroupName="optShow"
+            Content="必要勝利数(_W)"  IsChecked="False"
+            Margin="8,8,8,8" />
+      </StackPanel>
+
+      <DataGrid
+          Grid.Row="3"
+          AutoGenerateColumns="True"
+          CanUserAddRows="False"
+          RowHeaderWidth="0"
+          Margin="8,8,8,8"
+       />
+    </Grid>
+  </DockPanel>
+
+</Window>
