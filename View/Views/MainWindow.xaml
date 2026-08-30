@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
-    xmlns:vm="clr-namespace:BaseballScoreView.ViewModels"
+    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfControl"
     mc:Ignorable="d"
     Title="Main Window"
     Height="672" Width="840"
@@ -73,10 +73,11 @@
           </DataTemplate>
         </TabControl.ItemTemplate>
 
-        <TabControl.ContentTemplate>
-          <DataTemplate>
-          </DataTemplate>
-        </TabControl.ContentTemplate>
+        <TabControl.Template>
+          <ControlTemplate TargetType="TabControl">
+            <TabPanel  IsItemsHost="True" />
+          </ControlTemplate>
+        </TabControl.Template>
       </TabControl>
 
       <Grid
