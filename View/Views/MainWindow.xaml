@@ -98,8 +98,28 @@
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
             IsReadOnly="True"
-            ItemsSource="{Binding RankingSource.RankingData}"
-        />
+            ItemsSource="{Binding RankingSource.RankingData}" >
+          <DataGrid.Columns>
+            <DataGridTextColumn  Header="Team"
+                Binding="{Binding TeamName}" />
+            <DataGridTextColumn  Header="Total"
+                Binding="{Binding NumGames}" />
+            <DataGridTextColumn  Header="Won"
+                Binding="{Binding NumWons}" />
+            <DataGridTextColumn  Header="Lost"
+                Binding="{Binding NumLost}" />
+            <DataGridTextColumn  Header="Draw"
+                Binding="{Binding NumDraw}" />
+            <DataGridTextColumn  Header="Diff"
+                Binding="{Binding GameDiff}" />
+            <DataGridTextColumn  Header="%"
+                Binding="{Binding Percent}" />
+            <DataGridTextColumn  Header="Magic"
+                Binding="{Binding MagicText}" />
+            <DataGridTextColumn  Header="Rank"
+                Binding="{Binding RankRange}" />
+          </DataGrid.Columns>
+        </DataGrid>
         <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
       </Grid>
 
