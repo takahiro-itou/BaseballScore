@@ -45,6 +45,8 @@
           CanUserAddRows="False"
           RowHeaderWidth="0"
           Margin="8,8,8,0"
+          IsReadOnly="True"
+          ItemsSource="{Binding LineDataTable}"
       />
       <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
     </Grid>
