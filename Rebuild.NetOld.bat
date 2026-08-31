@@ -1,5 +1,5 @@
 
-set  solution=SampleView
+set  solution=BaseballScoreView
 set  target=Rebuild
 set  config="Debug"
 
