@@ -2,5 +2,5 @@
 	path = Core
 	url  = ../BaseballScoreLib.git
 [submodule "WpfControl"]
-	path = WpfControl
+	path = WpfHelper
 	url  = ../../takahiro-itou/BaseballScoreWpfHelper.git

@@ -21,7 +21,7 @@
     <ProjectReference Include="..\Cli.NetFramework4.8\Wrapper.Net48.vcxproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WpfControl\WpfControl.NetOld.csproj" />
+    <ProjectReference Include="..\WpfHelper\WpfHelper.NetOld.csproj" />
   </ItemGroup>
 
   <ItemGroup>

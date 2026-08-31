@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
-    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfControl"
+    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfHelper"
     mc:Ignorable="d"
     Title="{Binding WindowCaption}"
     Height="672" Width="840"
@@ -148,7 +148,7 @@
           RowHeaderWidth="0"
           Margin="8,8,8,8"
           IsReadOnly="True"
-          ItemsSource="{Binding ExtraSource}"
+          ItemsSource="{Binding ExtraSource.RestGameTable}"
        />
     </Grid>
   </DockPanel>
