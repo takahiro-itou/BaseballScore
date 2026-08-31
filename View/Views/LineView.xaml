@@ -5,9 +5,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
+    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfHelper"
+    mc:Ignorable="d"
     Title="Main Window"
     Height="672" Width="840"
 >
+  <Window.DataContext>
+    <vm:VictoryLineViewModel />
+  </Window.DataContext>
+
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition  Height="Auto" />
