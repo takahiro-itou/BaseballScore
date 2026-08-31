@@ -148,7 +148,7 @@
           RowHeaderWidth="0"
           Margin="8,8,8,8"
           IsReadOnly="True"
-          ItemsSource="{Binding ExtraSource}"
+          ItemsSource="{Binding ExtraSource.RestGameTable}"
        />
     </Grid>
   </DockPanel>
