@@ -47,7 +47,13 @@
           Margin="8,8,8,0"
           IsReadOnly="True"
           ItemsSource="{Binding LineDataTable}"
-      />
+      >
+        <DataGrid.RowStyle>
+          <Style TargetType="DataGridRow">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+          </Style>
+        </DataGrid.RowStyle>
+      </DataGrid>
       <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
     </Grid>
   </Grid>

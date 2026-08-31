@@ -91,6 +91,7 @@
           <ColumnDefinition  Width="*" />
           <ColumnDefinition  Width="Auto" />
         </Grid.ColumnDefinitions>
+
         <DataGrid
             Grid.Column="0"
             AutoGenerateColumns="False"
@@ -119,7 +120,13 @@
             <DataGridTextColumn  Header="Rank"
                 Binding="{Binding RankRange}"  Width="60" />
           </DataGrid.Columns>
+          <DataGrid.RowStyle>
+            <Style TargetType="DataGridRow">
+              <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
+          </DataGrid.RowStyle>
         </DataGrid>
+
         <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
       </Grid>
 
