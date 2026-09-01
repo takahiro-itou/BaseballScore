@@ -67,8 +67,8 @@
 
       <TabControl
           Grid.Row="0"
-          Margin="8,8,8,8"
           ItemsSource="{Binding Leagues}"
+          Margin="8,8,8,8"
       >
         <TabControl.ItemTemplate>
           <DataTemplate>
