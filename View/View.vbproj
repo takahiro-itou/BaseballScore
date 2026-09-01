@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Application.vb" />
+    <Compile Include="Application.xaml.vb" />
 
     <Compile Include="Models\MySampleModel.vb" />
 
