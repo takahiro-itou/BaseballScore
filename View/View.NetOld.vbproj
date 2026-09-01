@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Application.vb" />
+
     <Compile Include="Models\MySampleModel.vb" />
 
     <Compile Include="Views\EditForm.xaml.vb" />
