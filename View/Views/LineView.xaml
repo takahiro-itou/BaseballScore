@@ -29,6 +29,12 @@
           <TextBlock  Text="LeagueName" />
         </DataTemplate>
       </TabControl.ItemTemplate>
+
+      <TabControl.Template>
+        <ControlTemplate TargetType="TabControl">
+          <TabPanel  IsItemsHost="True" />
+        </ControlTemplate>
+      </TabControl.Template>
     </TabControl>
 
     <Grid
