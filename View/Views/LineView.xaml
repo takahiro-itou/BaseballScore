@@ -5,9 +5,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
+    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfHelper"
+    mc:Ignorable="d"
     Title="Main Window"
     Height="672" Width="840"
 >
+  <Window.DataContext>
+    <vm:VictoryLineViewModel />
+  </Window.DataContext>
+
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition  Height="Auto" />
@@ -16,13 +22,20 @@
 
     <TabControl
         Grid.Row="0"
+        ItemsSource="{Binding Leagues}"
         Margin="8,8,8,8"
     >
       <TabControl.ItemTemplate>
         <DataTemplate>
-          <TextBlock  Text="LeagueName" />
+          <TextBlock  Text="{Binding LeagueName}" />
         </DataTemplate>
       </TabControl.ItemTemplate>
+
+      <TabControl.Template>
+        <ControlTemplate TargetType="TabControl">
+          <TabPanel  IsItemsHost="True" />
+        </ControlTemplate>
+      </TabControl.Template>
     </TabControl>
 
     <Grid
@@ -39,7 +52,15 @@
           CanUserAddRows="False"
           RowHeaderWidth="0"
           Margin="8,8,8,0"
-      />
+          IsReadOnly="True"
+          ItemsSource="{Binding LineDataTable}"
+      >
+        <DataGrid.RowStyle>
+          <Style TargetType="DataGridRow">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+          </Style>
+        </DataGrid.RowStyle>
+      </DataGrid>
       <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
     </Grid>
   </Grid>
