@@ -29,6 +29,8 @@
 
     <Compile Include="Models\MySampleModel.vb" />
 
+    <Compile Include="Services\WindowService.vb" />
+
     <Compile Include="Views\EditForm.xaml.vb" />
     <Compile Include="Views\LineView.xaml.vb" />
     <Compile Include="Views\MainWindow.xaml.vb" />
