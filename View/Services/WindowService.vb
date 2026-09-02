@@ -15,10 +15,10 @@
 Imports BaseballScoreHelper.Services
 Imports BaseballScoreHelper.ViewModels
 
-Imports BaseballScoreView.Services
+Imports BaseballScoreView.Views
 
 
-Namespace Global.BaseballScoreView.Views
+Namespace Global.BaseballScoreView.Services
 
 Public Class WindowService
         Implements IWindowService

@@ -28,14 +28,16 @@ Protected Overrides Sub OnStartup(e As StartupEventArgs)
 ''--------------------------------------------------------------------
 ''    依存性注入
 ''--------------------------------------------------------------------
+Dim vmMain As MainViewModel
+Dim frmMain As MainWindow
 Dim wndSrv As WindowService
 
     MyBase.OnStartup(e)
 
-    wndSrc = New WindowService()
+    wndSrv  = New WindowService()
+    vmMain  = New MainViewModel(wndSrv)
 
-    Dim vmMain As New MainViewModel(wndSrv)
-    Dim frmMain As New MainWindow()
+    frmMain = New MainWindow()
     frmMain.DataContext = vmMain
     frmMain.Show()
 End Sub
