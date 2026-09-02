@@ -15,7 +15,10 @@
 Imports BaseballScoreHelper.Services
 Imports BaseballScoreHelper.ViewModels
 
-Imports BaseballScoreView.Views
+Imports BaseballScoreView.Services
+
+
+Namespace Global.BaseballScoreView.Views
 
 Public Class WindowService
         Implements IWindowService
@@ -26,6 +29,8 @@ Public Sub showLineView(ByVal viewModel As VictoryLineViewModel) _
     Dim frmLine As New LineView()
     frmLine.DataContext = viewModel
     frmLine.ShowDialog()
-End Sb
+End Sub
 
 End Class
+
+End Namespace
