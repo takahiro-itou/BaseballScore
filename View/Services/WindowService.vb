@@ -21,15 +21,26 @@ Imports BaseballScoreView.Views
 Namespace Global.BaseballScoreView.Services
 
 Public Class WindowService
-        Implements IWindowService
+        Inherits AbstractWindowService
 
-Public Sub showLineView(ByVal viewModel As VictoryLineViewModel) _
+
+Public Function showEditForm(
+        ByVal viewMode As ScoreEditorViewModel) As Boolean  _
+        Implements IWindowService.showEditForm
+    Return  False
+End Function
+
+
+Public Function showLineView(
+        ByVal viewModel As VictoryLineViewModel) As Boolean _
         Implements IWindowService.showLineView
 
     Dim frmLine As New LineView()
     frmLine.DataContext = viewModel
     frmLine.ShowDialog()
+    Return  True
 End Sub
+
 
 End Class
 
