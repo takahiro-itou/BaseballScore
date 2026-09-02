@@ -15,6 +15,7 @@
 Imports System.Windows
 
 Imports BaseballScoreHelper.ViewModels
+
 Imports BaseballScoreView.Views
 
 
@@ -34,6 +35,9 @@ Dim wndSrv As WindowService
     Dim frmMain As New MainWindow()
     frmMain.DataContext = vmMain
     frmMain.Show()
+End Sub
+
+
 End Class
 
 End Namespace
