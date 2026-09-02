@@ -24,22 +24,19 @@ Public Class WindowService
         Inherits AbstractWindowService
 
 
-Public Function showEditForm(
-        ByVal viewMode As ScoreEditorViewModel) As Boolean  _
-        Implements IWindowService.showEditForm
+Public Overrides Function showEditForm(
+        ByVal viewMode As ScoreEditorViewModel) As Boolean
     Return  False
 End Function
 
 
-Public Function showLineView(
-        ByVal viewModel As VictoryLineViewModel) As Boolean _
-        Implements IWindowService.showLineView
-
+Public Overrides Function showLineView(
+        ByVal viewModel As VictoryLineViewModel) As Boolean
     Dim frmLine As New LineView()
     frmLine.DataContext = viewModel
     frmLine.ShowDialog()
     Return  True
-End Sub
+End Function
 
 
 End Class
