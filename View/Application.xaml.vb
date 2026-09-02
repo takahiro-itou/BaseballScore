@@ -19,6 +19,8 @@ Imports BaseballScoreHelper.ViewModels
 Imports BaseballScoreView.Views
 
 
+Namespace Global.BaseballScoreView
+
 Public Class Application
 
 Protected Overrides Sub OnStartup(e As StartupEventArgs)
