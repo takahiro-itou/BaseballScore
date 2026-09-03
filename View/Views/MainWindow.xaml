@@ -11,10 +11,6 @@
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
 >
-  <Window.DataContext>
-    <vm:MainViewModel />
-  </Window.DataContext>
-
   <DockPanel>
     <!--  メインメニュー  -->
     <Menu  DockPanel.Dock="Top">
