@@ -12,28 +12,34 @@
 ''                                                                      ''
 ''************************************************************************
 
+Imports System.Windows
 
-Namespace Global.BaseballScoreView.ViewModels
+Imports BaseballScoreHelper.ViewModels
 
-Public Class LeagueInfo
-    Public Property LeagueName As String
-End Class
+Imports BaseballScoreView.Services
+Imports BaseballScoreView.Views
 
 
-Public Class MainViewModel
+Namespace Global.BaseballScoreView
 
-Public Property Leagues As List(Of LeagueInfo)
+Public Class Application
 
-Public Sub New()
+Protected Overrides Sub OnStartup(e As StartupEventArgs)
 ''--------------------------------------------------------------------
-''    コンストラクタ
+''    依存性注入
 ''--------------------------------------------------------------------
+Dim vmMain As MainViewModel
+Dim frmMain As MainWindow
+Dim wndSrv As WindowService
 
-    ' ダミーデータを作る
-    Me.Leagues = New List(Of LeagueInfo) From {
-        New LeagueInfo With { .LeagueName = "League 1" },
-        New LeagueInfo With { .LeagueName = "League 2" }
-    }
+    MyBase.OnStartup(e)
+
+    wndSrv  = New WindowService()
+    vmMain  = New MainViewModel(wndSrv)
+
+    frmMain = New MainWindow()
+    frmMain.DataContext = vmMain
+    frmMain.Show()
 End Sub
 
 
