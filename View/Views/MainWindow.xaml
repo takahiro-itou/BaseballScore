@@ -46,7 +46,8 @@
         <Separator />
         <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
         <Separator />
-        <MenuItem  Header="詳細表示(L) ..."  x:Name="mnuMagicLine" />
+        <MenuItem  Header="詳細表示(L) ..."
+            Command="{Binding MagicLineCommand}" />
       </MenuItem>
       <MenuItem  Header="オプション(_O)">
         <MenuItem  Header="フォント(F) ..."  x:Name="mnuOptionsFont" />

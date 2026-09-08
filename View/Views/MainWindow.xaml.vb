@@ -52,8 +52,7 @@ Dim dlgOpenFile As New Microsoft.Win32.OpenFileDialog
 End Sub
 
 
-Private Sub mnuMagicLine_Click(sender As Object, e As EventArgs) Handles _
-            mnuMagicLine.Click
+Private Sub mnuMagicLine_Click(sender As Object, e As EventArgs)
 ''--------------------------------------------------------------------
 ''    メニュー「マジック」－「詳細表示」
 ''--------------------------------------------------------------------
