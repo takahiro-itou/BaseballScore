@@ -157,7 +157,7 @@
       <editor:MatrixViewer
           Grid.Row="3"
           Margin="8,8,8,8"
-          DataContext="{Binding ExtraSource.RestGameTable}"
+          DataContext="{Binding ExtraSource.CurrentInfo}"
           Columns="{Binding NumColumns}"
           ColumnWidths="{Binding CustomWidths}"
           MatrixData="{Binding MatrixData}"
