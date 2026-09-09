@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cli.Net8\Wrapper.Net80.vcxproj" />
-    <ProjectReference Include="..\WpfModules\WpfHelper.csproj" />
+    <ProjectReference Include="..\WpfModules\BaseballScoreWpfHelper.csproj" />
   </ItemGroup>
 
   <ItemGroup>
