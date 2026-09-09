@@ -5,7 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
-    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfHelper"
     xmlns:editor="clr-namespace:WpfControl.Editor;assembly=WpfHelper"
     mc:Ignorable="d"
     Title="{Binding WindowCaption}"
@@ -149,23 +148,14 @@
       <editor:MatrixViewer
           Grid.Row="3"
           Margin="8,8,8,8"
-          Columns="{Binding ExtraSource.RestGameTable.NumColumns}"
-          ColumnWidths="{Binding ExtraSource.RestGameTable.CustomWidths}"
-          MatrixData="{Binding ExtraSource.RestGameTable.MatrixData}"
-          RowHeights="{Binding ExtraSource.RestGameTable.CustomHeights}"
-          Rows="{Binding ExtraSource.RestGameTable.TotalRows}"
+          DataContext="{Binding ExtraSource.RestGameTable}"
+          Columns="{Binding NumColumns}"
+          ColumnWidths="{Binding CustomWidths}"
+          MatrixData="{Binding MatrixData}"
+          RowHeights="{Binding CustomHeights}"
+          Rows="{Binding NumRows}"
           HorizontalScrollBarVisibility="Auto"
           VerticalScrollBarVisibility="Auto"
-       />
-
-      <DataGrid
-          Grid.Row="3"
-          AutoGenerateColumns="True"
-          CanUserAddRows="False"
-          RowHeaderWidth="0"
-          Margin="8,8,8,8"
-          IsReadOnly="True"
-          ItemsSource="{Binding ExtraSource.RestGameTable}"
        />
     </Grid>
   </DockPanel>
