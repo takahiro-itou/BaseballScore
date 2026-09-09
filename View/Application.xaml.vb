@@ -12,12 +12,13 @@
 ''                                                                      ''
 ''************************************************************************
 
-Imports System.Windows
-
+Imports BaseballScoreHelper.Models
 Imports BaseballScoreHelper.ViewModels
 
 Imports BaseballScoreView.Services
 Imports BaseballScoreView.Views
+
+Imports System.Windows
 
 
 Namespace Global.BaseballScoreView
@@ -29,17 +30,18 @@ Protected Overrides Sub OnStartup(e As StartupEventArgs)
 ''    依存性注入
 ''--------------------------------------------------------------------
 Dim vmMain As MainViewModel
-Dim frmMain As MainWindow
 Dim wndSrv As WindowService
+Dim mdlDoc As ScoreDocument
 
     MyBase.OnStartup(e)
 
+    ' 必要なインスタンスを生成する。
     wndSrv  = New WindowService()
-    vmMain  = New MainViewModel(wndSrv)
+    mdlDoc  = New ScoreDocument()
+    vmMain  = New MainViewModel(wndSrv, mdlDoc)
 
-    frmMain = New MainWindow()
-    frmMain.DataContext = vmMain
-    frmMain.Show()
+    ' メインビューを表示する。
+    wndSrv.showMainView(vmMain)
 End Sub
 
 

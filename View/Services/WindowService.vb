@@ -25,16 +25,46 @@ Public Class WindowService
 
 
 Public Overrides Function showEditForm(
-        ByVal viewMode As ScoreEditorViewModel) As Boolean
+        ByVal viewModel As ScoreEditorViewModel) As Boolean
+''--------------------------------------------------------------------
+''    編集フォームを表示する。
+''--------------------------------------------------------------------
+Dim frmEdit As EditForm
+
+    frmEdit = New EditForm
+    frmEdit.DataContext = viewModel
+    frmEdit.ShowDialog()
+
     Return  False
 End Function
 
 
 Public Overrides Function showLineView(
         ByVal viewModel As VictoryLineViewModel) As Boolean
-    Dim frmLine As New LineView()
+''--------------------------------------------------------------------
+''    優勝ラインビューを表示する。
+''--------------------------------------------------------------------
+Dim frmLine As LineView
+
+    frmLine = New LineView()
     frmLine.DataContext = viewModel
     frmLine.ShowDialog()
+
+    Return  True
+End Function
+
+
+Public           Function showMainView(
+        ByVal viewModel As MainViewModel) As Boolean
+''--------------------------------------------------------------------
+''    メインビューを表示する。
+''--------------------------------------------------------------------
+Dim frmMain As MainWindow
+
+    frmMain = New MainWindow()
+    frmMain.DataContext = viewModel
+    frmMain.Show()
+
     Return  True
 End Function
 
