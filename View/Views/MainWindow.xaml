@@ -6,11 +6,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
     xmlns:editor="clr-namespace:WpfControl.Editor;assembly=WpfHelper"
+    xmlns:whdata="clr-namespace:WpfHelper.Data;assembly=WpfHelper"
     mc:Ignorable="d"
     Title="{Binding WindowCaption}"
     Height="672" Width="840"
     MinHeight="672" MinWidth="840"
 >
+  <Window.Resources>
+    <whdata:IntToBoolConverter x:Key="IntToBool" />
+  </Window.Resources>
+
   <DockPanel>
     <!--  メインメニュー  -->
     <Menu  DockPanel.Dock="Top">
@@ -137,15 +142,15 @@
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
             Content="残り試合数(_R)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=1}"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=1}"
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
             Content="マジック(_M)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=2}"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=2}"
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
             Content="必要勝利数(_W)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=3}"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=3}"
             Margin="8,8,8,8" />
       </StackPanel>
 
