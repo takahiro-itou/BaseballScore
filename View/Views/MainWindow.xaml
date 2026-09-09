@@ -131,17 +131,21 @@
           Grid.Row="2"
           Orientation="Horizontal"
           Margin="8,0,8,0"
+          DataContext="{Binding ExtraSource}"
       >
         <CheckBox  Content="日程上の「予定」も集計する(_S)"
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
-            Content="残り試合数(_R)"  IsChecked="True"
+            Content="残り試合数(_R)"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=1}"
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
-            Content="マジック(_M)"  IsChecked="False"
+            Content="マジック(_M)"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=2}"
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
-            Content="必要勝利数(_W)"  IsChecked="False"
+            Content="必要勝利数(_W)"
+            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBoolConverter}, ConverterParameter=3}"
             Margin="8,8,8,8" />
       </StackPanel>
 
