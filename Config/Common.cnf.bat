@@ -1,3 +1,3 @@
 
 set  solution=BaseballScoreView
-set  config="Debug"
+set  config="Release"
