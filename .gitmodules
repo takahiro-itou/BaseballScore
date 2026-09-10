@@ -4,3 +4,6 @@
 [submodule "WpfControl"]
 	path = WpfModules
 	url  = ../../takahiro-itou/BaseballScoreWpfHelper.git
+[submodule "Wrapper"]
+	path = Wrapper
+	url  = ../BaseballScoreWrapper.git
