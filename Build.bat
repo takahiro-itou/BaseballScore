@@ -1,7 +1,10 @@
 
-set  solution=BaseballScoreView
+setlocal
+set  script_dir=%~dp0
+
+CALL  "%script_dir%Config\Common.cnf.bat"
+
 set  target=Build
-set  config="Release"
 
 
 msbuild  -restore  -t:%target%  ^
