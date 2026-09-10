@@ -10,10 +10,6 @@
     Title="Main Window"
     Height="672" Width="840"
 >
-  <Window.DataContext>
-    <vm:VictoryLineViewModel />
-  </Window.DataContext>
-
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition  Height="Auto" />
