@@ -46,8 +46,16 @@
             x:Name="mnuScoreRefresh" />
       </MenuItem>
       <MenuItem  Header="マジック(_M)">
-        <MenuItem  Header="優勝マジック(_V)"  x:Name="mnuMagicVictory" />
-        <MenuItem  Header="プレーオフマジック(_P)"  x:Name="mnuMagicPlayoff" />
+        <MenuItem  Header="優勝マジック(_V)"
+            IsCheckable="True"
+            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=0, Mode=TwoWay}"
+            x:Name="mnuMagicVictory"
+        />
+        <MenuItem  Header="プレーオフマジック(_P)"
+            IsCheckable="True"
+            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=1, Mode=TwoWay}"
+            x:Name="mnuMagicPlayoff"
+        />
         <Separator />
         <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
         <Separator />
@@ -89,6 +97,7 @@
       <Grid
           Grid.Row="1"
           Margin="8,0,8,8"
+          DataContext="{Binding SelectedLeagueSummary}"
       >
         <Grid.ColumnDefinitions>
           <ColumnDefinition  Width="*" />
@@ -99,7 +108,6 @@
             Grid.Column="0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            DataContext="{Binding SelectedLeagueSummary}"
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
             IsReadOnly="True"
