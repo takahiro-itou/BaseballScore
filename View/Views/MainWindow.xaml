@@ -89,7 +89,6 @@
       <Grid
           Grid.Row="1"
           Margin="8,0,8,8"
-          DataContext="{Binding SelectedLeagueSummary}"
       >
         <Grid.ColumnDefinitions>
           <ColumnDefinition  Width="*" />
@@ -100,7 +99,7 @@
             Grid.Column="0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
-            DataContext="{Binding RankingSource}"
+            DataContext="{Binding SelectedLeagueSummary}"
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
             IsReadOnly="True"
