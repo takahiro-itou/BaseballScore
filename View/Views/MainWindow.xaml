@@ -71,6 +71,7 @@
           Grid.Row="0"
           ItemsSource="{Binding Leagues}"
           Margin="8,8,8,8"
+          SelectedIndex="{Binding SelectedLeagueIndex}"
       >
         <TabControl.ItemTemplate>
           <DataTemplate>
@@ -88,6 +89,7 @@
       <Grid
           Grid.Row="1"
           Margin="8,0,8,8"
+          DataContext="{Binding SelectedLeagueSummary}"
       >
         <Grid.ColumnDefinitions>
           <ColumnDefinition  Width="*" />
@@ -98,10 +100,11 @@
             Grid.Column="0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
+            DataContext="{Binding RankingSource}"
             RowHeaderWidth="0"
             Margin="8,8,8,0" MinHeight="240" MinWidth="552"
             IsReadOnly="True"
-            ItemsSource="{Binding RankingSource.RankingData}" >
+            ItemsSource="{Binding RankingData}" >
           <DataGrid.Columns>
             <DataGridTextColumn  Header="Team"
                 Binding="{Binding TeamName}"  Width="*"/>
