@@ -74,7 +74,7 @@
       >
         <TabControl.ItemTemplate>
           <DataTemplate>
-            <TextBlock  Text="{Binding leagueName}" />
+            <TextBlock  Text="{Binding LeagueName}" />
           </DataTemplate>
         </TabControl.ItemTemplate>
 
