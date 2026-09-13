@@ -48,14 +48,26 @@
       <MenuItem  Header="マジック(_M)">
         <MenuItem  Header="優勝マジック(_V)"
             IsCheckable="True"
-            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=0, Mode=TwoWay}"
-            x:Name="mnuMagicVictory"
-        />
+            x:Name="mnuMagicVictory" >
+          <MenuItem.IsChecked>
+            <Binding
+                Path="SelectedMagicMode"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="0"
+                Mode="TwoWay" />
+          </MenuItem.IsChecked>
+        </MenuItem>
         <MenuItem  Header="プレーオフマジック(_P)"
             IsCheckable="True"
-            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=1, Mode=TwoWay}"
-            x:Name="mnuMagicPlayoff"
-        />
+            x:Name="mnuMagicPlayoff" >
+          <MenuItem.IsChecked>
+            <Binding
+                Path="SelectedMagicMode"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="1"
+                Mode="TwoWay" />
+          </MenuItem.IsChecked>
+        </MenuItem>
         <Separator />
         <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
         <Separator />
@@ -96,8 +108,7 @@
 
       <Grid
           Grid.Row="1"
-          Margin="8,0,8,8"
-          DataContext="{Binding SelectedLeagueSummary}"
+          Margin="8,0,0,8"
       >
         <Grid.ColumnDefinitions>
           <ColumnDefinition  Width="*" />
@@ -108,8 +119,10 @@
             Grid.Column="0"
             AutoGenerateColumns="False"
             CanUserAddRows="False"
+            DataContext="{Binding SelectedLeagueSummary}"
             RowHeaderWidth="0"
-            Margin="8,8,8,0" MinHeight="240" MinWidth="552"
+            Margin="8,8,0,0"
+            MinHeight="240"  MinWidth="552"
             IsReadOnly="True"
             ItemsSource="{Binding RankingData}" >
           <DataGrid.Columns>
@@ -221,7 +234,26 @@
           </DataGrid.RowStyle>
         </DataGrid>
 
-        <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
+        <GroupBox  Header="日付 (D)"
+            Grid.Column="1"
+            Grid.Row="0"
+            Margin="8,0,8,0"
+        >
+          <StackPanel Orientation="Vertical">
+            <Calendar  Margin="0,0,0,0"
+              SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+            />
+            <TextBox
+                Margin="0,8,0,0"
+                IsReadOnly="True"
+                TextAlignment="Center"
+            >
+              <TextBox.Text>
+                <Binding Path="SelectedDate" StringFormat="yyyy/MM/dd" />
+              </TextBox.Text>
+            </TextBox>
+          </StackPanel>
+        </GroupBox>
       </Grid>
 
       <StackPanel
@@ -234,16 +266,34 @@
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
             Content="残り試合数(_R)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=1}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="1" />
+          </RadioButton.IsChecked>
+        </RadioButton>
         <RadioButton  GroupName="optShow"
             Content="マジック(_M)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=2}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="2" />
+          </RadioButton.IsChecked>
+        </RadioButton>
         <RadioButton  GroupName="optShow"
             Content="必要勝利数(_W)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=3}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="3" />
+          </RadioButton.IsChecked>
+        </RadioButton>
       </StackPanel>
 
       <editor:MatrixViewer
