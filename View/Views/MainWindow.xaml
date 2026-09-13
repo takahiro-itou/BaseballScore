@@ -96,7 +96,7 @@
 
       <Grid
           Grid.Row="1"
-          Margin="8,0,8,8"
+          Margin="8,0,0,8"
           DataContext="{Binding SelectedLeagueSummary}"
       >
         <Grid.ColumnDefinitions>
@@ -109,7 +109,8 @@
             AutoGenerateColumns="False"
             CanUserAddRows="False"
             RowHeaderWidth="0"
-            Margin="8,8,8,0" MinHeight="240" MinWidth="552"
+            Margin="8,8,0,0"
+            MinHeight="240"  MinWidth="552"
             IsReadOnly="True"
             ItemsSource="{Binding RankingData}" >
           <DataGrid.Columns>
@@ -221,9 +222,22 @@
           </DataGrid.RowStyle>
         </DataGrid>
 
-        <Calendar  Grid.Column="1"  Margin="8,8,8,0"
-          SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
-        />
+        <GroupBox  Header="日付 (D)"
+            Grid.Column="1"
+            Grid.Row="0"
+            Margin="8,0,8,0"
+        >
+          <StackPanel Orientation="Vertical">
+            <Calendar  Margin="0,0,0,0"
+              SelectedDate="{Binding SelectedDate, Mode=TwoWay}"
+            />
+            <TextBox
+                Margin="0,8,0,0"
+                IsReadOnly="True"
+                Text="{Binding SelectedDate, Mode=OneWay}"
+            />
+          </StackPanel>
+        </GroupBox>
       </Grid>
 
       <StackPanel
