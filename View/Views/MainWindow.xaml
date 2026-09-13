@@ -48,14 +48,26 @@
       <MenuItem  Header="マジック(_M)">
         <MenuItem  Header="優勝マジック(_V)"
             IsCheckable="True"
-            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=0, Mode=TwoWay}"
-            x:Name="mnuMagicVictory"
-        />
+            x:Name="mnuMagicVictory" >
+          <MenuItem.IsChecked>
+            <Binding
+                Path="SelectedMagicMode"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="0"
+                Mode="TwoWay" />
+          </MenuItem.IsChecked>
+        </MenuItem>
         <MenuItem  Header="プレーオフマジック(_P)"
             IsCheckable="True"
-            IsChecked="{Binding SelectedMagicMode, Converter={StaticResource IntToBool}, ConverterParameter=1, Mode=TwoWay}"
-            x:Name="mnuMagicPlayoff"
-        />
+            x:Name="mnuMagicPlayoff" >
+          <MenuItem.IsChecked>
+            <Binding
+                Path="SelectedMagicMode"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="1"
+                Mode="TwoWay" />
+          </MenuItem.IsChecked>
+        </MenuItem>
         <Separator />
         <MenuItem  Header="簡易計算で行う(_E)"  x:Name="mnuMagicEasy" />
         <Separator />
@@ -234,8 +246,12 @@
             <TextBox
                 Margin="0,8,0,0"
                 IsReadOnly="True"
-                Text="{Binding SelectedDate, Mode=OneWay}"
-            />
+                TextAlignment="Center"
+            >
+              <TextBox.Text>
+                <Binding Path="SelectedDate" StringFormat="yyyy/MM/dd" />
+              </TextBox.Text>
+            </TextBox>
           </StackPanel>
         </GroupBox>
       </Grid>
@@ -250,16 +266,34 @@
             Margin="8,8,8,8" />
         <RadioButton  GroupName="optShow"
             Content="残り試合数(_R)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=1}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="1" />
+          </RadioButton.IsChecked>
+        </RadioButton>
         <RadioButton  GroupName="optShow"
             Content="マジック(_M)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=2}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="2" />
+          </RadioButton.IsChecked>
+        </RadioButton>
         <RadioButton  GroupName="optShow"
             Content="必要勝利数(_W)"
-            IsChecked="{Binding SelectedShowType, Converter={StaticResource IntToBool}, ConverterParameter=3}"
-            Margin="8,8,8,8" />
+            Margin="8,8,8,8" >
+          <RadioButton.IsChecked>
+            <Binding
+                Path="SelectedShowType"
+                Converter="{StaticResource IntToBool}"
+                ConverterParameter="3" />
+          </RadioButton.IsChecked>
+        </RadioButton>
       </StackPanel>
 
       <editor:MatrixViewer
