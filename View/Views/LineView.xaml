@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:BaseballScoreView"
-    xmlns:vm="clr-namespace:BaseballScoreHelper.ViewModels;assembly=WpfHelper"
+    xmlns:editor="clr-namespace:WpfControl.Editor;assembly=WpfHelper"
     mc:Ignorable="d"
     Title="Main Window"
     Height="672" Width="840"
@@ -42,22 +42,20 @@
         <ColumnDefinition  Width="*" />
         <ColumnDefinition  Width="Auto" />
       </Grid.ColumnDefinitions>
-      <DataGrid
+
+      <editor:MatrixViewer
           Grid.Column="0"
-          AutoGenerateColumns="True"
-          CanUserAddRows="False"
-          RowHeaderWidth="0"
-          Margin="8,8,8,0"
-          IsReadOnly="True"
-          ItemsSource="{Binding LineDataTable}"
-      >
-        <DataGrid.RowStyle>
-          <Style TargetType="DataGridRow">
-            <Setter Property="HorizontalAlignment" Value="Left" />
-          </Style>
-        </DataGrid.RowStyle>
-      </DataGrid>
-      <Calendar  Grid.Column="1"  Margin="8,8,8,0" />
+          Margin="8,8,0,8"
+          DataContext="{Binding CurrentInfo}"
+          Columns="{Binding NumColumns}"
+          ColumnWidths="{Binding CustomWidths}"
+          MatrixData="{Binding MatrixData}"
+          RowHeights="{Binding CustomHeights}"
+          Rows="{Binding NumRows}"
+          HorizontalScrollBarVisibility="Auto"
+          VerticalScrollBarVisibility="Auto"
+       />
+     <Calendar  Grid.Column="1"  Margin="8,8,8,8" />
     </Grid>
   </Grid>
 
