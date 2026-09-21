@@ -51,12 +51,16 @@
           MatrixData="{Binding MatrixData}"
           Rows="{Binding NumRows}"
        >
-        <editor:MatrixViewer.Layouts
-          ColumnWidths="{Binding CustomWidths}"
-          RowHeights="{Binding CustomHeights}"
-        >
+        <editor:MatrixViewer.Layouts>
+          <editor:MatrixLayout
+            ColumnWidths="{Binding CustomWidths}"
+            RowHeights="{Binding CustomHeights}"
+          >
+          </editor:MatrixLayout>
         </editor:MatrixViewer.Layouts>
         <editor:MatrixViewer.Options>
+          <editor:MatrixOption>
+          </editor:MatrixOption>
         </editor:MatrixViewer.Options>
        </editor:MatrixViewer>
      <Calendar  Grid.Column="1"  Margin="8,8,8,8" />
