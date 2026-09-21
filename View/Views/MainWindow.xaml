@@ -301,13 +301,22 @@
           Margin="8,8,8,8"
           DataContext="{Binding ExtraSource.CurrentInfo}"
           Columns="{Binding NumColumns}"
-          ColumnWidths="{Binding CustomWidths}"
           MatrixData="{Binding MatrixData}"
-          RowHeights="{Binding CustomHeights}"
           Rows="{Binding NumRows}"
-          HorizontalScrollBarVisibility="Auto"
-          VerticalScrollBarVisibility="Auto"
-       />
+      >
+        <editor:MatrixViewer.Layouts>
+          <editor:MatrixLayout
+              ColumnWidths="{Binding CustomWidths}"
+              RowHeights="{Binding CustomHeights}"
+          >
+          </editor:MatrixLayout>
+        </editor:MatrixViewer.Layouts>
+        <editor:MatrixViewer.Options>
+          <editor:MatrixOption>
+          </editor:MatrixOption>
+        </editor:MatrixViewer.Options>
+      </editor:MatrixViewer>
+
     </Grid>
   </DockPanel>
 
