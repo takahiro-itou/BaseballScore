@@ -44,17 +44,21 @@
       </Grid.ColumnDefinitions>
 
       <editor:MatrixViewer
-          Grid.Column="0"
+          Grid.Column="0"  Grid.Row="0"
           Margin="8,8,0,8"
           DataContext="{Binding CurrentInfo}"
           Columns="{Binding NumColumns}"
-          ColumnWidths="{Binding CustomWidths}"
           MatrixData="{Binding MatrixData}"
-          RowHeights="{Binding CustomHeights}"
           Rows="{Binding NumRows}"
-          HorizontalScrollBarVisibility="Auto"
-          VerticalScrollBarVisibility="Auto"
-       />
+       >
+        <editor:MatrixViewer.Layouts
+          ColumnWidths="{Binding CustomWidths}"
+          RowHeights="{Binding CustomHeights}"
+        >
+        </editor:MatrixViewer.Layouts>
+        <editor:MatrixViewer.Options>
+        </editor:MatrixViewer.Options>
+       </editor:MatrixViewer>
      <Calendar  Grid.Column="1"  Margin="8,8,8,8" />
     </Grid>
   </Grid>
