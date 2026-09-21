@@ -307,6 +307,8 @@
         <editor:MatrixViewer.Layouts>
           <editor:MatrixLayout
               ColumnWidths="{Binding CustomWidths}"
+              DefaultCellHeight="{Binding DefaultHeight}"
+              DefaultCellWidth="{Binding DefaultWidth}"
               RowHeights="{Binding CustomHeights}"
           >
           </editor:MatrixLayout>
